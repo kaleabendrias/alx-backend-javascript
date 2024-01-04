@@ -1,5 +1,10 @@
+/* eslint-disable no-tabs */
 export default class Building {
   constructor(sqft) {
+    if (this.constructor !== Building
+	&& this.evacuationWarningMessage === undefined) {
+      throw new Error('Class extending Building must override evacuationWarningMessage');
+    }
     this.sqft = sqft;
   }
 
@@ -7,16 +12,10 @@ export default class Building {
     return this._sqft;
   }
 
-  set sqft(newSqft) {
-    if (typeof newSqft === 'number') {
-      this._sqft = newSqft;
-    } else {
+  set sqft(val) {
+    if (typeof val !== 'number') {
       throw new TypeError('sqft must be a number');
     }
-  }
-
-  // eslint-disable-next-line class-methods-use-this
-  evacuationWarningMessage() {
-    throw new Error('Class extending Building must override evacuationWarningMessage');
+    this._sqft = val;
   }
 }
