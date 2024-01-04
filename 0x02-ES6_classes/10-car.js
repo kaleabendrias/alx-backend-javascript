@@ -13,12 +13,24 @@ export default class Car {
     return this[carBrand];
   }
 
+  set _brand(value) {
+    this[carBrand] = value;
+  }
+
   get _motor() {
     return this[carMotor];
   }
 
+  set _motor(value) {
+    this[carMotor] = value;
+  }
+
   get _color() {
     return this[carColor];
+  }
+
+  set _color(value) {
+    this[carColor] = value;
   }
 
   cloneCar() {
