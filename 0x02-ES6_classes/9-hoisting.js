@@ -1,45 +1,41 @@
-export class HolbertonClass {
+class HolbertonClass {
   constructor(year, location) {
-    this._year = year;
-    this._location = location;
+    this.startYear = year;
+    this.location = location;
   }
 
   get year() {
-    return this._year;
+    return this.startYear;
   }
 
-  get location() {
-    return this._location;
+  get place() {
+    return this.location;
   }
 }
 
-export class StudentHolberton {
-  constructor(firstName, lastName, holbertonClass) {
-    this._firstName = firstName;
-    this._lastName = lastName;
-    this._holbertonClass = holbertonClass;
+const classOf2019 = new HolbertonClass(2019, 'San Francisco');
+const classOf2020 = new HolbertonClass(2020, 'San Francisco');
+
+class HolbertonStudent {
+  constructor(first, last, holbertonClass) {
+    this.firstName = first;
+    this.lastName = last;
+    this.holbertonClass = holbertonClass;
   }
 
   get fullName() {
-    return `${this._firstName} ${this._lastName}`;
+    return `${this.firstName} ${this.lastName}`;
   }
 
-  get holbertonClass() {
-    return this._holbertonClass;
-  }
-
-  get fullStudentDescription() {
-    return `${this._firstName} ${this._lastName} - ${this._holbertonClass.year} - ${this._holbertonClass.location}`;
+  get holbertonClassInfo() {
+    return `${this.firstName} ${this.lastName} - ${this.holbertonClass.year} - ${this.holbertonClass.place}`;
   }
 }
 
-const class2019 = new HolbertonClass(2019, 'San Francisco');
-const class2020 = new HolbertonClass(2020, 'San Francisco');
+const studentA = new HolbertonStudent('Guillaume', 'Salva', classOf2020);
+const studentB = new HolbertonStudent('John', 'Doe', classOf2020);
+const studentC = new HolbertonStudent('Albert', 'Clinton', classOf2019);
+const studentD = new HolbertonStudent('Donald', 'Bush', classOf2019);
+const studentE = new HolbertonStudent('Jason', 'Sandler', classOf2019);
 
-export const listOfStudents = [
-  new StudentHolberton('Guillaume', 'Salva', class2020),
-  new StudentHolberton('John', 'Doe', class2020),
-  new StudentHolberton('Albert', 'Clinton', class2019),
-  new StudentHolberton('Donald', 'Bush', class2019),
-  new StudentHolberton('Jason', 'Sandler', class2019),
-];
+export default [studentA, studentB, studentC, studentD, studentE];
