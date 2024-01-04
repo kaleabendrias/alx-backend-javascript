@@ -1,41 +1,45 @@
-class HolbertonClass {
+export class HolbertonYear {
   constructor(year, location) {
-    this.startYear = year;
-    this.location = location;
+    this._year = year;
+    this._location = location;
   }
 
-  get year() {
-    return this.startYear;
+  get academicYear() {
+    return this._year;
   }
 
-  get place() {
-    return this.location;
+  get location() {
+    return this._location;
   }
 }
 
-const classOf2019 = new HolbertonClass(2019, 'San Francisco');
-const classOf2020 = new HolbertonClass(2020, 'San Francisco');
+const academicYear2019 = new HolbertonYear(2019, 'San Francisco');
+const academicYear2020 = new HolbertonYear(2020, 'San Francisco');
 
-class HolbertonStudent {
-  constructor(first, last, holbertonClass) {
-    this.firstName = first;
-    this.lastName = last;
-    this.holbertonClass = holbertonClass;
+export class HolbertonStudent {
+  constructor(firstName, lastName, holbertonYear) {
+    this._firstName = firstName;
+    this._lastName = lastName;
+    this._holbertonYear = holbertonYear;
   }
 
   get fullName() {
-    return `${this.firstName} ${this.lastName}`;
+    return `${this._firstName} ${this._lastName}`;
   }
 
-  get holbertonClassInfo() {
-    return `${this.firstName} ${this.lastName} - ${this.holbertonClass.year} - ${this.holbertonClass.place}`;
+  get academicYear() {
+    return this._holbertonYear;
+  }
+
+  get fullStudentDescription() {
+    return `${this._firstName} ${this._lastName} - ${this._holbertonYear.academicYear} - ${this._holbertonYear.location}`;
   }
 }
 
-const studentA = new HolbertonStudent('Guillaume', 'Salva', classOf2020);
-const studentB = new HolbertonStudent('John', 'Doe', classOf2020);
-const studentC = new HolbertonStudent('Albert', 'Clinton', classOf2019);
-const studentD = new HolbertonStudent('Donald', 'Bush', classOf2019);
-const studentE = new HolbertonStudent('Jason', 'Sandler', classOf2019);
+const studentGuillaume = new HolbertonStudent('Guillaume', 'Salva', academicYear2020);
+const studentJohn = new HolbertonStudent('John', 'Doe', academicYear2020);
+const studentAlbert = new HolbertonStudent('Albert', 'Clinton', academicYear2019);
+const studentDonald = new HolbertonStudent('Donald', 'Bush', academicYear2019);
+const studentJason = new HolbertonStudent('Jason', 'Sandler', academicYear2019);
 
-export default [studentA, studentB, studentC, studentD, studentE];
+export default [studentGuillaume, studentJohn, studentAlbert, studentDonald, studentJason];
