@@ -62,5 +62,9 @@ describe('calculate', () => {
             assert.equal(calculateNumber("DIVIDE", 8.0, -2.0), -4)
             assert.equal(calculateNumber("DIVIDE", 9.0, -2.0), -4.5)
         })
+        it("dividing by negative num full numbers", () => {
+            assert.equal(calculateNumber("DIVIDE", -8.0, 0), "Error")
+            assert.equal(calculateNumber("DIVIDE", 8.0, 0), "Error")
+        })
     })
 })
