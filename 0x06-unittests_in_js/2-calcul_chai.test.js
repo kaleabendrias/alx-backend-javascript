@@ -16,6 +16,11 @@ describe('calculate', () => {
             expect(calculateNumber("SUM", 1, 2.6)).to.equal(4);
             expect(calculateNumber("SUM", 1, 2.2)).to.equal(3);
         });
+        it('test it with floating second var', () => {
+            expect(calculateNumber("SUM", 1.9, 2.0).to.equal(4))
+            expect(calculateNumber("SUM", 1.9, 2.6).to.equal(5))
+            expect(calculateNumber("SUM", 1.2, 2.6).to.equal(4))
+        })
         it('test it with negative floating var', () => {
             expect(calculateNumber("SUM", -2.0, 1.9)).to.equal(0);
             expect(calculateNumber("SUM", 2.6, -1.9)).to.equal(1);
@@ -36,6 +41,11 @@ describe('calculate', () => {
             expect(calculateNumber("SUBTRACT", 2.6, 1)).to.equal(2);
             expect(calculateNumber("SUBTRACT", 2.2, 1)).to.equal(1);
         });
+        it('test it with floating second var', () => {
+            expect(calculateNumber("SUBTRACT", 2.0, 1.9).to.equal(0))
+            expect(calculateNumber("SUBTRACT", 2.6, 1.9).to.equal(1))
+            expect(calculateNumber("SUBTRACT", 2.6, 1.2).to.equal(2))
+        })
         it('test it with negative floating var', () => {
             expect(calculateNumber("SUBTRACT", -2.0, 1.9)).to.equal(-4);
             expect(calculateNumber("SUBTRACT", 2.6, -1.9)).to.equal(5);
