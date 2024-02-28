@@ -41,6 +41,11 @@ describe('calculate', () => {
             assert.strictEqual(calculateNumber("SUBTRACT", 2.6, 1.9), 1)
             assert.strictEqual(calculateNumber("SUBTRACT", 2.6, 1.2), 2)
         })
+        it('test it with neagive floating var', () => {
+            assert.strictEqual(calculateNumber("SUBTRACT", -2.0, 1.9), -4)
+            assert.strictEqual(calculateNumber("SUBTRACT", 2.6, -1.9), 5)
+            assert.strictEqual(calculateNumber("SUBTRACT", -2.6, -1.2), -2)
+        })
     })
     describe('DIVIDE', () => {
         it("postive full numbers", () => {
