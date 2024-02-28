@@ -4,12 +4,13 @@
   "description": "",
   "main": "0-calcul.js",
   "scripts": {
-    "test": "mocha 1-calcul.test.js"
+    "test": "mocha --require chai/register-expect 2-calcul_chai.test.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "chai": "^4.3.0",
     "mocha": "^6.2.2"
   }
 }
