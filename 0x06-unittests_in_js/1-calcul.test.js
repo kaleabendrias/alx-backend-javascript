@@ -21,6 +21,11 @@ describe('calculate', () => {
             assert.strictEqual(calculateNumber("SUM", 1.9, 2.6), 5)
             assert.strictEqual(calculateNumber("SUM", 1.2, 2.6), 4)
         })
+        it('test it with neagive floating var', () => {
+            assert.strictEqual(calculateNumber("SUM", -2.0, 1.9), 0)
+            assert.strictEqual(calculateNumber("SUM", 2.6, -1.9), 1)
+            assert.strictEqual(calculateNumber("SUM", -2.6, -1.2), -4)
+        })
     })
     describe("sub", () => {
         it('should add two positive numbers correctly', () => {
