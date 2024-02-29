@@ -81,5 +81,10 @@ describe("calculate", () => {
       expect(calculateNumber("DIVIDE", 8, 2)).to.equal(4);
       expect(calculateNumber("DIVIDE", -8, -2)).to.equal(4);
     });
+    it("zero dividing by zero", () => {
+      expect(calculateNumber("DIVIDE", 0, 0)).to.equal("Error");
+      expect(calculateNumber("DIVIDE", 0, 2)).to.equal(0);
+      expect(calculateNumber("DIVIDE", 0, -2.2)).to.equal(0);
+    });
   });
 });
