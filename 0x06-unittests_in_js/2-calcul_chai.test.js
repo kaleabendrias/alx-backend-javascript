@@ -26,6 +26,11 @@ describe("calculate", () => {
       expect(calculateNumber("SUM", 2.6, -1.9)).to.equal(1);
       expect(calculateNumber("SUM", -2.6, -1.2)).to.equal(-4);
     });
+    it("test it with postive floating var", () => {
+      expect(calculateNumber("SUM", -2, 2)).to.equal(0);
+      expect(calculateNumber("SUM", 3, -2)).to.equal(1);
+      expect(calculateNumber("SUM", -3, -1)).to.equal(-4);
+    });
   });
   describe("SUBTRACT", () => {
     it("should subtract two positive numbers correctly", () => {
@@ -35,6 +40,8 @@ describe("calculate", () => {
       expect(calculateNumber("SUBTRACT", 3, 1.0)).to.equal(2);
       expect(calculateNumber("SUBTRACT", 3, 1.2)).to.equal(2);
       expect(calculateNumber("SUBTRACT", 3, 1.7)).to.equal(1);
+      expect(calculateNumber("SUBTRACT", -3, 1.7)).to.equal(-5);
+      expect(calculateNumber("SUBTRACT", 3, -1.7)).to.equal(5);
     });
     it("test it with floating second var", () => {
       expect(calculateNumber("SUBTRACT", 2.0, 1)).to.equal(1);
@@ -45,6 +52,8 @@ describe("calculate", () => {
       expect(calculateNumber("SUBTRACT", 2.0, 1.9)).to.equal(0);
       expect(calculateNumber("SUBTRACT", 2.6, 1.9)).to.equal(1);
       expect(calculateNumber("SUBTRACT", 2.6, 1.2)).to.equal(2);
+      expect(calculateNumber("SUBTRACT", -2.6, 1.2)).to.equal(-4);
+      expect(calculateNumber("SUBTRACT", 2.6, -1.9)).to.equal(5);
     });
     it("test it with negative floating var", () => {
       expect(calculateNumber("SUBTRACT", -2.0, 1.9)).to.equal(-4);
@@ -69,6 +78,7 @@ describe("calculate", () => {
     it("dividing by zero", () => {
       expect(calculateNumber("DIVIDE", -8, 2)).to.equal(-4);
       expect(calculateNumber("DIVIDE", 8, 2)).to.equal(4);
+      expect(calculateNumber("DIVIDE", -8, -2)).to.equal(4);
     });
   });
 });
