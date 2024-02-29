@@ -1,8 +1,4 @@
 function calculateNumber(type, a, b) {
-    if (typeof a !== 'number' || typeof b !== 'number') {
-        throw new Error('Parameters must be numbers');
-    }
-
     const roundedA = Math.round(a);
     const roundedB = Math.round(b);
 
