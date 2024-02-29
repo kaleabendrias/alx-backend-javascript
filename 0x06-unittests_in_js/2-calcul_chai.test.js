@@ -74,6 +74,7 @@ describe("calculate", () => {
     it("dividing by zero", () => {
       expect(calculateNumber("DIVIDE", -8.0, 0)).to.equal("Error");
       expect(calculateNumber("DIVIDE", 8.0, 0)).to.equal("Error");
+      expect(calculateNumber("DIVIDE", 8, 0)).to.equal("Error");
     });
     it("dividing by zero", () => {
       expect(calculateNumber("DIVIDE", -8, 2)).to.equal(-4);
