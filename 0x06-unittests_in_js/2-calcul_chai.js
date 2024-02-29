@@ -17,7 +17,7 @@ function calculateNumber(type, a, b) {
             }
             return roundedA / roundedB;
         default:
-            throw new Error('Invalid type. Type must be SUM, SUBTRACT, or DIVIDE.');
+            return 0
     }
 }
 
