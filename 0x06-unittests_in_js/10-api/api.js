@@ -2,6 +2,8 @@ const express = require("express")
 
 const app = express()
 
+app.use(express.json());
+
 app.get("/", (req, res) => {
     res.send("Welcome to the payment system")
 })
@@ -11,7 +13,7 @@ app.get("/cart/:id(\\d+)", (req, res) => {
   res.send(`Payment methods for cart ${cartId}`);
 });
 
-app.get("/available_payments", (req, res) => {
+app.get('/available_payments', (req, res) => {
   const paymentMethods = 
   res.json({
     payment_methods: {
@@ -21,7 +23,7 @@ app.get("/available_payments", (req, res) => {
 });
 
 app.post('/login', (req, res) => {
-  const { userName } = req.body;
+  const userName  = req.body.userName;
   res.send(`Welcome ${userName}`);
 })
 

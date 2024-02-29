@@ -59,7 +59,7 @@ describe("Login endpoint", () => {
   it("should return a welcome message with the username provided in the request body", (done) => {
     const username = "Kaleab";
     request.post({
-      url: "http://localhost:7865/login",
+      url: 'http://localhost:7865/login',
       body: { userName: username },
       json: true
     }, (error, response, body) => {
