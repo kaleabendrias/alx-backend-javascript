@@ -37,6 +37,25 @@ describe("Cart page", () => {
       done();
     });
   });
+});
+
+describe("Available Payments endpoint", () => {
+  it("should return the available payment methods", (done) => {
+    request("http://localhost:7865/available_payments", (error, response, body) => {
+      const expectedPaymentMethods = {
+        payment_methods: {
+          credit_cards: true,
+          paypal: false
+        }
+      };
+      expect(response.statusCode).to.equal(200);
+      expect(JSON.parse(body)).to.deep.equal(expectedPaymentMethods);
+      done();
+    });
+  });
+});
+
+describe("Login endpoint", () => {
   it("should return a welcome message with the username provided in the request body", (done) => {
     const userName = "Betty";
     request.post({
