@@ -1,4 +1,8 @@
 function calculateNumber(type, a, b) {
+    if (typeof a !== 'number' || typeof b !== 'number') {
+        throw new Error('Parameters must be numbers');
+    }
+
     const roundedA = Math.round(a);
     const roundedB = Math.round(b);
 
@@ -13,7 +17,7 @@ function calculateNumber(type, a, b) {
             }
             return roundedA / roundedB;
         default:
-            return 0
+            throw new Error('Invalid type. Type must be SUM, SUBTRACT, or DIVIDE.');
     }
 }
 
